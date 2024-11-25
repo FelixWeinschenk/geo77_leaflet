@@ -63,11 +63,6 @@
    "Open Topo Map": otm_basemap,
    "Open Street Map INT": osmint_basemap
   };
- 
- // Overlay dictonary
- var overlays = {
- "Earthquakes": overlay_eq_points
- };
   
   // External data earthquakes
   // Visualize
@@ -84,6 +79,11 @@
   pointToLayer: function (feature, latlng) {
   return L.circleMarker(latlng, orangeMarker);
   }}).addTo(mymap);
+  
+  // Overlay dictonary
+  var overlays = {
+  "Earthquakes": overlay_eq_points
+  };
   
   // Layer control
   var legend = L.control.layers(basemaps,overlays, null, {collapsed: false, position: "topleft"}).addTo(mymap);
