@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
 </head>
 <body>
- <h1>This is a header</h1>
-<p>This is a paragraph of text with <a href="https://uni-tuebingen.de/">hyperlink</a>.</p>
+<h1>GEO76 Angewandte Geoinformatik WS24/25</h1>
+<p>
+Contact details<br>
+Mail: <a href="felix.weinschenk@student.uni-tuebingen.de">felix.weinschenk@student.uni-tuebingen.de</a><br>
+Phone Number: 07118893553<br>
+Working Group: <a href="https://www.geographie.uni-tuebingen.de/">Geographical Institute Tübingen</a><br></p> 
+
+<div id="mapid" style="width: 900px; height: 300px; position: relative;"></div>
+<script>
+var mymap = L.map('mapid').setView([48.524026, 9.055236]).setZoom(16);
+//L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png').addTo(mymap);
+L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	//minZoom: 0,
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+	ext: 'jpg'
+	}).addTo(mymap);
+var markBota = L.marker([48.524026, 9.055236]).addTo(mymap);
+markBota.bindPopup("<p> Geographical Institute<br>Eberhard-Karls-University Tübingen<br>Rümelinstraße 19-23<br>72070 Tübingen</p>");
+</script>
+
+<p><br><br>Beispiel Youtube: SAGA Tutorial<br>
+</p> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nwX5dBOCGYs?si=PcW2eFIrgVlHMiOI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>
+Website made by Felix<br>
+</p>
 </body>
 </html>
