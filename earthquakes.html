@@ -86,6 +86,7 @@ function popUpFunction(feature, layer) {
   
   //Adding earthquake data
   var overlay_eq_points = L.geoJSON(eq_points, {
+  onEachFeature: popUpFunction,
   pointToLayer: function (feature, latlng) {
   return L.circleMarker(latlng, orangeMarker);
   }}).addTo(mymap);
