@@ -86,7 +86,7 @@
   };
   
   // Layer control
-  var legend = L.control.layers(basemaps,overlays, null, {collapsed: false, position: 'topleft'}).addTo(mymap);
+  var legend = L.control.layers(basemaps,overlays, null, {collapsed: true, position: 'topleft'}).addTo(mymap);
 
   var scale = L.control.scale({maxWidth: 150, metric: true, imperial: true}).addTo(mymap); 
   
