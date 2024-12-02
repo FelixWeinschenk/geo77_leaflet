@@ -78,14 +78,15 @@
   
   // External data earthquakes
   // Visualize
-  var orangeMarker = {
+ 
+  /*var orangeMarker = {
   radius: feature.properties.INTENSITY,
   fillColor: "#ff7800",
   color: "#000",
   weight: 1,
   opacity: 1,
   fillOpacity: 0.6
-  };
+  };*/
   // Visualize Options Ruler
   var rulerOptions = {
   position: 'topleft',
@@ -109,7 +110,14 @@
   var overlay_eq_points = L.geoJSON(eq_points, {
   onEachFeature: popUpFunction,
   pointToLayer: function (feature, latlng) {
-  return L.circleMarker(latlng, orangeMarker);
+  return L.circleMarker(latlng, {
+  radius: feature.properties.INTENSITY,
+  fillColor: "#ff7800",
+  color: "#000",
+  weight: 1,
+  opacity: 1,
+  fillOpacity: 0.6
+  });
   }}).addTo(mymap);
   
   // Overlay dictonary
