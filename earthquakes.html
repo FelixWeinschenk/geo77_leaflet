@@ -74,6 +74,16 @@
   opacity: 1,
   fillOpacity: 0.6
   };
+  
+  // Add popup function
+function popUpFunction(feature, layer) {
+ var popupContent = "<b>Date: </b>"+feature.properties.EV_DATE+
+  "<br><b>Latitude: </b>"+ feature.properties.LAT+
+  "<br><b>Longitude: </b>"+ feature.properties.LON.toFixed(1)+
+  "<br><b>Magnitude: </b>"+ feature.properties['MAG'];
+ layer.bindPopup(popupContent);
+};
+  
   //Adding earthquake data
   var overlay_eq_points = L.geoJSON(eq_points, {
   pointToLayer: function (feature, latlng) {
