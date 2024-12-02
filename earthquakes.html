@@ -79,7 +79,7 @@
   // External data earthquakes
   // Visualize
   var orangeMarker = {
-  radius: ~ data$INTENSITY,
+  radius: ~ rescale(INTENSITY, c(1,10)),
   fillColor: "#ff7800",
   color: "#000",
   weight: 1,
